@@ -19,7 +19,8 @@ Output: 21
 Note:
 Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
 """
-
+# my original solution
+"""""
 class Solution(object):
     def reverse(self, x):
         # create a list to store integer in
@@ -58,3 +59,45 @@ print(problem_seven.reverse(-1230))
 print(problem_seven.reverse(98760))
 # execute function with zero
 print(problem_seven.reverse(0))
+"""
+
+# revised solution
+
+class newSOlution(object):
+    def reverse(self,x):
+        negative_sum = False
+        overflow = 0
+        digit_list = []
+        # check if original integer value is negative
+        if (x < 0):
+            negative_sum = True
+            # multiply by negative one to turn positive, we will
+            # add the negative back after reversal
+            x = (x * -1)
+        # only other condition is if integer is positive so we
+        # leave it alone
+        else:
+            x = x
+        # split up integer into single digits within a list
+        x = str(x)
+        for digit in x:
+            digit_list.append(digit)
+        # reverse list
+        digit_list = digit_list[::-1]
+        # check to see if negative needs to be added
+        if negative_sum == False:
+            final_digit = int(''.join(digit_list))
+            return final_digit
+        elif negative_sum == True:
+
+            final_digit = ''.join(digit_list)
+            final_digit = int(final_digit)
+            final_digit = final_digit*-1
+            return final_digit
+
+
+my_number = -123
+my_object = newSOlution()
+print(my_object.reverse(my_number))
+
+
