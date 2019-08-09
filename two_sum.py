@@ -18,14 +18,10 @@ def add_two(an_array, number):
     i = 0
     x = 0
     for j in range(len(an_array)):
-        if ((an_array[j] + an_array[j]+1) == number):
-            i = j
-            x = j+1
-        else:
-            for k in range(len(an_array)):
-                if((an_array[j] + an_array[k]) == number):
-                    i = j
-                    x = k
+       for k in range(len(an_array)):
+           if((an_array[j] + an_array[k]) == number):
+               i = j
+               x = k
 
     return i,x
 
