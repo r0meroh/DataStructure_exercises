@@ -9,12 +9,23 @@ def j_n_s(string1,string2):
     s2 = 0
     jewels = list(string1)
     stones = list(string2)
-
+    print(s1)
+    print(s2)
     for x in range(len(jewels)):
-        if(jewels[x]== stones.index(jewels[x])):
-            s1+=s1
+        if jewels[x] in stones:
+            print(jewels[x])
+            s1 = s1 + 1
+            print(stones)
 
-    return s1
 
 
-print(j_n_s('gH','gGhhH'))
+
+    return s1, s2
+
+def cheeky(string1, string2):
+    return sum( each in string1 for each in string2), len(string2)
+
+print(j_n_s('gh','gGhhH'))
+
+print('cheeky solution')
+print(cheeky('gh','gGghHH'))
