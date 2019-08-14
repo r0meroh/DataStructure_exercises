@@ -31,3 +31,8 @@ print('Please input a number that two indices of the array need to add up to:')
 sum =int(input())
 print(add_two(the_create_array,sum))
 print(the_create_array[2])
+
+"""
+    will incorporate a solution with a hashtable next
+"""
+
