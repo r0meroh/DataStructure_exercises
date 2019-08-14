@@ -4,6 +4,24 @@ to a specific target.
 You may assume that each input would have exactly one solution,
 and you may not use the same element twice.
 """
+
+def use_hash_table(an_array, number):
+    possible_sums = []
+    my_hash = {}
+
+    for i in range(0,len(an_array)):
+
+        sum_minus_number = number - an_array[i]
+
+        if sum_minus_number in my_hash:
+            possible_sums.append([an_array[i], sum_minus_number])
+        my_hash[an_array[i]] = an_array[i]
+
+    return possible_sums
+
+
+
+
 def create_the_array():
     my_array = []
     input_from_user = None
@@ -32,7 +50,16 @@ sum =int(input())
 print(add_two(the_create_array,sum))
 print(the_create_array[2])
 
+print('using hash table solution ')
+print(use_hash_table(the_create_array,sum))
+
 """
     will incorporate a solution with a hashtable next
 """
+
+
+
+
+
+
 
