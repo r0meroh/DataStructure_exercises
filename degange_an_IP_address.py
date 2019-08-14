@@ -12,21 +12,22 @@ def defange (address):
     print(new_add)
     for alpha in range(len(new_add)):
         if (new_add[alpha] == '.'):
-            final_add.insert((alpha), '[')
-            final_add.insert((alpha+2), ']')
-
+            new_add[alpha] = '[.]'
+    final_add = new_add
     print(final_add)
 
     for num in final_add:
         my_string += num
 
-    return final_add
+    return my_string
 
 
 def create_address():
-    print('enter an address with "." inbetween numbers')
+    print('enter an address with "." in between numbers')
     my_address = input()
     return my_address
 
 new_address = create_address()
 print(defange(new_address))
+print('short cheeky way')
+print(new_address.replace('.','[.]'))
