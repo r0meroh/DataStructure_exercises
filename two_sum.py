@@ -5,9 +5,9 @@ You may assume that each input would have exactly one solution,
 and you may not use the same element twice.
 """
 
-def use_hash_table(an_array, number):
+def use_dictionary(an_array, number):
     possible_sums = []
-    my_hash = {}
+    my_dict = {}
 
     for i in range(0,len(an_array)):
 
@@ -15,7 +15,7 @@ def use_hash_table(an_array, number):
 
         if sum_minus_number in my_hash:
             possible_sums.append([an_array[i], sum_minus_number])
-        my_hash[an_array[i]] = an_array[i]
+        my_dict[an_array[i]] = an_array[i]
 
     return possible_sums
 
@@ -50,8 +50,8 @@ sum =int(input())
 print(add_two(the_create_array,sum))
 print(the_create_array[2])
 
-print('using hash table solution ')
-print(use_hash_table(the_create_array,sum))
+print('using dictionary solution ')
+print(use_dictionary(the_create_array,sum))
 
 """
     will incorporate a solution with a hashtable next
