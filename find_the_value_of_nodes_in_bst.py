@@ -73,4 +73,6 @@ pre_order(my_root)
 
 print("\n\n")
 
-BST_soulution.sum_BST(my_root, node(9), node(1))
+tree = BST_soulution(my_root)
+tree.sum_BST(left, right)
+
