@@ -13,7 +13,7 @@ def insert(root, node):
     if root is None:
         root = node
     else:
-        if root.val < node.value:
+        if root.value < node.value:
             if root.right is None:
                 root.right = node
             else:
@@ -24,6 +24,20 @@ def insert(root, node):
             else:
                 insert(root.left, node)
 
+
+def in_order(root):
+    if not root:
+        return
+    in_order(root.left)
+    print(root.value)
+    in_order(root.right)
+
+def pre_order(root):
+    if not root:
+        return
+    print(root.value)
+    pre_order(root.left)
+    pre_order(root.right)
 
 
 
@@ -43,4 +57,20 @@ class BST_soulution(object):
 
         self.sum = 0
         dfs(root)
-        return self.sum
+        print(" sum is ", self.sum)
+
+
+
+my_root = node(5)
+insert(my_root, node(8))
+insert(my_root, node(9))
+insert(my_root, node(2))
+insert(my_root, node(1))
+
+in_order(my_root)
+print(" \n\n")
+pre_order(my_root)
+
+print("\n\n")
+
+BST_soulution.sum_BST(my_root, node(9), node(1))
