@@ -45,6 +45,7 @@ def pre_order(root):
 
 class BST_soulution(object):
     def sum_BST(self,root,Left, Right):
+       # function to calculate sum
         def dfs(node):
             if node:
                 if Left <= node.value <= Right:
@@ -67,12 +68,14 @@ insert(my_root, node(9))
 insert(my_root, node(2))
 insert(my_root, node(1))
 
+print('print tree in order')
 in_order(my_root)
 print(" \n\n")
+print('print tree in "pre-order"')
 pre_order(my_root)
 
 print("\n\n")
-
-tree = BST_soulution(my_root)
-tree.sum_BST(left, right)
+print('printing value of total nodes in a BST')
+tree = BST_soulution()
+tree.sum_BST(5, 9, 8)
 
