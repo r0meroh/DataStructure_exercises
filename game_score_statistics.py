@@ -23,18 +23,22 @@ def user_scores():
 
 def minimum (scores):
     mini = sorted(scores)
+    print('lowest score was:\n')
     return mini[0]
 
 
 def highest(scores):
+    print('highest score was:\n')
     mini = sorted(scores)
     return mini[-1]
 
 
 def average(score):
+    print('average is:\n')
     return stat.mean(score)
 
 def deviation(scores):
+    print('standard deviation is:\n')
     return stat.stdev(scores)
 
 
@@ -44,13 +48,9 @@ def main():
     scores = user_scores()
     print('the scores entered are \n')
     print(scores)
-    print('lowest score was:\n')
     print(minimum(scores))
-    print('highest score was:\n')
     print(highest(scores))
-    print('average is:\n')
     print(average(scores))
-    print('standard deviation is:\n')
     print(deviation(scores))
 
 
