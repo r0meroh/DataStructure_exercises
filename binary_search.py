@@ -2,29 +2,21 @@
  This program implements a simple binary search.
 """
 
-
-def search(collection, target):
+def search(list_ob, target):
+    high = len(list_ob)-1
     low = 0
-    high = len(collection) - 1
+    list_ob = sorted(list_ob)
 
     while low <= high:
-        mid = (low + high) // 2
-        print('mid is currently: ' + str(mid))
-
-        item = collection[mid]
-        print('target is currently: ' + str(target))
-        print(type(item))
-        print('item is currently: ' + str(item))
-
-        if target == item:
-            return "found it at ", str(mid), " index"
-        elif target < item:
-            high = mid - 1
-            print('high is currently: ' + str(high))
-        else:
+        mid = (low + high) //2
+        if target == list_ob[mid]:
+            return 'target found at index', mid
+        if target > list_ob[mid]:
             low = mid + 1
-            print('low is currently: ' + str(low))
-    return -1 , "item not found in collection"
+        if target < list_ob[mid]:
+            high = mid -1
+
+    return 'target not in list', -1
 
 
 def main():
