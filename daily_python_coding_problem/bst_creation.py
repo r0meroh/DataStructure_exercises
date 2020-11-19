@@ -21,6 +21,19 @@ class bstNode:
                 self.right = bstNode(data)
 
 
+    def search(self, value):
+        if self.data == value:
+            return True
+        if value < self.data:
+            if self.left:
+                return self.left.search(value)
+            else:
+                return False
+        if value > self.data:
+            if self.right:
+                return self.right.search(value)
+            else:
+                return False
     # LnR
     def in_order(self):
         elements = []
@@ -54,3 +67,4 @@ if __name__ == '__main__':
 
     my_tree = build_bst(nums)
     print(my_tree.in_order())
+    print(my_tree.search(333))
